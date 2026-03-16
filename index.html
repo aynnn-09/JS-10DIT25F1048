@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JAVASCRIPT</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <img src="images/logo.png" width="30" class="me-2">
+                    JAVASCRIPT
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                LAB
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="index.html">LAB 1</a></li>
+                                <li><a class="dropdown-item" href="LAB 2.html">LAB 2</a></li>
+                                <li><a class="dropdown-item" href="Lab 3.html">LAB 3</a></li>
+                                <li><a class="dropdown-item" href="lab 4.html">Lab 4</a></li>
+                                <li><a class="dropdown-item" href="Lab 5.html">Lab 5</a></li>
+                            </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container my-5 text-center hero-section">
+        <h1 class="text-danger">Practical Lab For Javascript</h1>
+        <h4 class="text-primary">Prepared by Nurul Ain Nabilah</h4>
+    </div>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB ACTIVITY 3</title>
+    </head>
+
+    <body>
+        <div class="center-all">
+
+            <header>
+                <h1>Lab 3.1.1: JavaScript Fundamentals</h1>
+                <p>Variables, Data Types, and Operators</p>
+            </header>
+
+            <section class="lab-card">
+                <h2>Steps 1 - 3: Logic & Console</h2>
+                <div class="instruction">
+                    Open the <strong>Browser Console</strong> (F12 > Console) to see the output for variables and
+                    <code>typeof</code> checks.
+                </div>
+                <button onclick="runConsoleTasks()">Run Console Tasks</button>
+                <p class="note">*This logs Course Name, Student Count, and Data Types.</p>
+            </section>
+
+            <section class="lab-card">
+                <h2>Step 4: Simple UI Output</h2>
+                <div class="instruction">
+                    Test the <code>prompt()</code>, <code>alert()</code>, and <code>confirm()</code> functions.
+                </div>
+                <button onclick="runInteraction()">Start Interaction</button>
+            </section>
+
+            <section class="lab-card"
+                style="border: 2px solid #27ae60; margin-top: 20px; padding: 15px; border-radius: 8px;">
+                <h2 style="color: #27ae60;">Final Task: POS Script</h2>
+                <div class="instruction">
+                    <strong>Scenario:</strong> Calculate a total bill with 6% Service Tax.
+                </div>
+                <p>Price per Item: <strong>RM 15.00</strong></p>
+                <p>Tax Rate: <strong>6%</strong></p>
+
+                <button onclick="runPOS()"
+                    style="background-color: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                    Checkout Now
+                </button>
+            </section>
+
+
+            <script>
+
+                function runConsoleTasks() {
+                    const courseName = "Wrb Design Technology";
+                    let studentCount = 30;
+                    let isLabFinished = false;
+
+                    console.log("---Step 1: Varaibles---");
+                    console.log("Course:", courseName);
+                    console.log("initial Students:", studentCount);
+
+                    let x = 10;
+                    let y = 3;
+                    console.log("---Step 2: Arithmetic---");
+                    console.log("Addition (10+3):", x + y);
+                    console.log("Remainder (10%3):", x % y);
+
+                    console.log("---Step 3: Data types---");
+                    console.log("Type of courseName:", typeof courseName);
+                    console.log("Type of studentCount:", typeof studentCount);
+                    console.log("Type of isLabFinished:", typeof isLabFinished);
+
+                    alert("Check your browser console (F12) to see the results!");
+                }
+
+                function runInteraction() {
+                    let username = prompt("What is your name?");
+                    if (username) {
+                        alert("Welcome to JS Lab, " + username + "!");
+
+                        let proceed = confirm("Do you want to start the lab?");
+                        console.log("User wants to proceed:", proceed);
+                    }
+
+                }
+
+                function runPOS() {
+                    const pricePerItem = 15;
+                    const taxRate = 0.06;
+
+                    let quantity = prompt("How many items do you want to buy?");
+
+                    if (quantity !== null && quantity !== "") {
+                        let qtyNumber = parseInt(quantity);
+
+                        if (!isNaN(qtyNumber) && qtyNumber > 0) {
+                            let subtotal = pricePerItem * qtyNumber;
+                            let totalTax = subtotal * taxRate;
+                            let finalBill = subtotal + totalTax;
+
+                            alert("Order Summary:\n" +
+                                "Subtotal: RM " + subtotal.toFixed(2) + "\n" +
+                                "Service Tax (6%): RM " + totalTax.toFixed(2) + "\n\n" +
+                                "Your total bill is: RM " + finalBill.toFixed(2));
+                        } else {
+                            alert("Invalid input! Please enter a valid number.");
+                        }
+                    }
+
+                }
+
+            </script>
+        </div>
+
+    </body>
+
+</html>
+
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+    © 2026 JAVASCRIPT | JTMK
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

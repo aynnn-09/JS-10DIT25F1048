@@ -1,0 +1,76 @@
+body {
+    background-color: #f4f6f9;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    padding: 60px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 600;
+}
+
+.text-primary {
+    color: #1f4e79 !important;
+}
+
+.list-group-item {
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: #1f4e79;
+    color: white;
+    cursor: pointer;
+}
+
+.card {
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.accordion-button {
+    font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #1f4e79;
+    color: white;
+}
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+}
